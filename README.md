@@ -92,15 +92,21 @@ docker compose up --build
 ```
 
 # Run Ollama
+<<<<<<< HEAD
 
+=======
+```bash
+>>>>>>> 95462490bb07462d2a79fab4eecf17c9b26d49be
 ollama serve
-ollama pull model_name
+ollama pull 
+```
 
 Then open the app in your browser.
 
 ## Example Outputs
 
 PatchPilot can generate:
+<<<<<<< HEAD
 
 - a readable incident summary
 - likely root causes
@@ -108,11 +114,20 @@ PatchPilot can generate:
 - fix suggestions
 - draft commit messages
 - pull request notes
+=======
+	- 	a readable incident summary
+	- 	likely root causes
+	- 	confidence-ranked hypotheses
+	- 	fix suggestions
+	- 	draft commit messages
+	- 	pull request notes
+>>>>>>> 95462490bb07462d2a79fab4eecf17c9b26d49be
 
 ## Project Status
 
 PatchPilot is currently in MVP development.
 
+<<<<<<< HEAD
 ### Current MVP Scope
 
 - incident creation
@@ -137,6 +152,29 @@ PatchPilot is currently in MVP development.
 - ROADMAP.md
 - EVALS.md
 
+=======
+Current MVP Scope
+	- 	incident creation
+	- 	evidence upload
+	- 	log parsing
+	- 	AI analysis
+	- 	results dashboard
+	- 	saved incident history
+
+Planned
+	- 	GitHub integration
+	- 	incident replay mode
+	- 	similar incident retrieval
+	- 	eval dashboard
+	- 	team workspaces
+	- 	desktop app via Tauri
+
+Documentation
+	-	ARCHITECTURE.md
+	- 	ROADMAP.md
+	-	EVALS.md
+
+>>>>>>> 95462490bb07462d2a79fab4eecf17c9b26d49be
 ## Contributing
 
 Contributions are welcome. Open an issue, suggest a feature, or submit a PR.
