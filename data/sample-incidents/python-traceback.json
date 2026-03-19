@@ -1,0 +1,7 @@
+{
+  "title": "Billing worker crashes while rendering invoice PDFs",
+  "description": "Support reports that invoice generation started failing after a template rollout. Every retry from the billing worker returns a 500 and leaves the invoice in a pending state.",
+  "repo_url": "https://github.com/acme-inc/billing-platform",
+  "logs": "2026-03-18T09:42:11Z service=billing-worker ERROR invoice render failed request_id=inv_7811\nTraceback (most recent call last):\n  File \"/srv/app/workers/invoice.py\", line 87, in render_invoice\n    template = loader.get_template(customer.plan.template_key)\n  File \"/srv/app/templates/loader.py\", line 42, in get_template\n    raise TemplateNotFoundError(f\"missing template: {name}\")\nTemplateNotFoundError: missing template: enterprise-v4"
+}
+

@@ -1,0 +1,7 @@
+{
+  "title": "Webhook processor timing out on partner sync",
+  "description": "Customer-facing sync jobs started stalling after a partner API slowdown. Support can see repeated timeout errors but no clear exception trace in the app logs.",
+  "repo_url": "https://github.com/acme-inc/integrations",
+  "logs": "2026-03-18T21:04:02Z service=webhook-ingest WARN outbound sync latency above threshold partner=ledger-pro\n2026-03-18T21:04:18Z service=webhook-ingest ERROR sync job exceeded deadline job_id=job_441 timeout_ms=15000\n2026-03-18T21:04:19Z service=webhook-ingest ERROR sync job exceeded deadline job_id=job_442 timeout_ms=15000\n2026-03-18T21:04:20Z service=webhook-ingest ERROR sync job exceeded deadline job_id=job_443 timeout_ms=15000"
+}
+

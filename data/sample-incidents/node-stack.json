@@ -1,0 +1,7 @@
+{
+  "title": "Checkout API returns 500 on coupon recalculation",
+  "description": "A release on March 18 introduced a regression where carts with stacked promotions fail during recalculation. The API returns a 500 before the order can be persisted.",
+  "repo_url": "https://github.com/acme-inc/checkout-service",
+  "logs": "2026-03-18T16:13:29Z [checkout-api] ERROR failed to recalculate cart total request_id=req_9928\nTypeError: Cannot read properties of undefined (reading 'amount')\n    at applyPromotion (/usr/src/app/src/domain/cart/promotions.ts:118:27)\n    at recalculateCart (/usr/src/app/src/domain/cart/recalculate.ts:52:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"
+}
+
