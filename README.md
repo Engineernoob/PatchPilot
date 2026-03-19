@@ -94,37 +94,37 @@ Then open the app in your browser.
 # Example Outputs
 
 PatchPilot can generate:
-	•	a readable incident summary
-	•	likely root causes
-	•	confidence-ranked hypotheses
-	•	fix suggestions
-	•	draft commit messages
-	•	pull request notes
+	- 	a readable incident summary
+	- 	likely root causes
+	- 	confidence-ranked hypotheses
+	- 	fix suggestions
+	- 	draft commit messages
+	- 	pull request notes
 
 ## Project Status
 
 PatchPilot is currently in MVP development.
 
 Current MVP Scope
-	•	incident creation
-	•	evidence upload
-	•	log parsing
-	•	AI analysis
-	•	results dashboard
-	•	saved incident history
+	- 	incident creation
+	- 	evidence upload
+	- 	log parsing
+	- 	AI analysis
+	- 	results dashboard
+	- 	saved incident history
 
 Planned
-	•	GitHub integration
-	•	incident replay mode
-	•	similar incident retrieval
-	•	eval dashboard
-	•	team workspaces
-	•	desktop app via Tauri
+	- 	GitHub integration
+	- 	incident replay mode
+	- 	similar incident retrieval
+	- 	eval dashboard
+	- 	team workspaces
+	- 	desktop app via Tauri
 
 Documentation
-	•	ARCHITECTURE.md
-	•	ROADMAP.md
-	•	EVALS.md
+	-	ARCHITECTURE.md
+	- 	ROADMAP.md
+	-	EVALS.md
 
 ## Contributing
 
