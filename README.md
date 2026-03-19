@@ -7,6 +7,7 @@ PatchPilot is an open-source AI support engineer for debugging apps, ranking roo
 Most debugging tools stop at showing errors.
 
 PatchPilot goes further by turning messy incident evidence into structured engineering outputs:
+
 - concise incident summaries
 - ranked root-cause hypotheses
 - suggested fixes
@@ -29,20 +30,24 @@ It is designed for developers who want faster triage, clearer diagnostics, and a
 ## Tech Stack
 
 ### Frontend
+
 - Next.js
 - TypeScript
 - Tailwind CSS
 - shadcn/ui
 
 ### Backend
+
 - FastAPI
 - Python
 - SQLAlchemy / SQLModel
 
 ### Data
+
 - Postgres
 
 ### AI
+
 - Ollama
 
 ## Architecture Overview
@@ -53,6 +58,7 @@ PatchPilot has two main applications:
 - `apps/api` — backend for ingestion, parsing, storage, and AI analysis
 
 Supporting packages include:
+
 - `packages/shared` — shared contracts and types
 - `packages/prompts` — versioned AI prompt templates
 - `packages/parsers` — evidence extraction logic
@@ -71,6 +77,7 @@ Supporting packages include:
 ## Quickstart
 
 ### Prerequisites
+
 - Docker
 - Docker Compose
 - Ollama installed locally
@@ -83,53 +90,57 @@ cd patchpilot
 cp .env.example .env
 docker compose up --build
 ```
+
 # Run Ollama
+
 ollama serve
 ollama pull model_name
 
 Then open the app in your browser.
 
-# Example Outputs
+## Example Outputs
 
 PatchPilot can generate:
-	•	a readable incident summary
-	•	likely root causes
-	•	confidence-ranked hypotheses
-	•	fix suggestions
-	•	draft commit messages
-	•	pull request notes
+
+- a readable incident summary
+- likely root causes
+- confidence-ranked hypotheses
+- fix suggestions
+- draft commit messages
+- pull request notes
 
 ## Project Status
 
 PatchPilot is currently in MVP development.
 
-Current MVP Scope
-	•	incident creation
-	•	evidence upload
-	•	log parsing
-	•	AI analysis
-	•	results dashboard
-	•	saved incident history
+### Current MVP Scope
 
-Planned
-	•	GitHub integration
-	•	incident replay mode
-	•	similar incident retrieval
-	•	eval dashboard
-	•	team workspaces
-	•	desktop app via Tauri
+- incident creation
+- evidence upload
+- log parsing
+- AI analysis
+- results dashboard
+- saved incident history
 
-Documentation
-	•	ARCHITECTURE.md
-	•	ROADMAP.md
-	•	EVALS.md
+### Planned
 
-Contributing
+- GitHub integration
+- incident replay mode
+- similar incident retrieval
+- eval dashboard
+- team workspaces
+- desktop app via Tauri
+
+## Documentation
+
+- ARCHITECTURE.md
+- ROADMAP.md
+- EVALS.md
+
+## Contributing
 
 Contributions are welcome. Open an issue, suggest a feature, or submit a PR.
 
-License
+## License
 
 MIT
-
-
