@@ -84,8 +84,9 @@ cp .env.example .env
 docker compose up --build
 ```
 # Run Ollama
-```ollama serve
-ollama pull model_name
+```bash
+ollama serve
+ollama pull 
 ```
 
 Then open the app in your browser.
