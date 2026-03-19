@@ -84,8 +84,9 @@ cp .env.example .env
 docker compose up --build
 ```
 # Run Ollama
-ollama serve
+```ollama serve
 ollama pull model_name
+```
 
 Then open the app in your browser.
 
@@ -124,11 +125,11 @@ Documentation
 	•	ROADMAP.md
 	•	EVALS.md
 
-Contributing
+## Contributing
 
 Contributions are welcome. Open an issue, suggest a feature, or submit a PR.
 
-License
+## License
 
 MIT
 
