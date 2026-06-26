@@ -1,173 +1,193 @@
-# PatchPilot
+## PatchPilot
 
-PatchPilot is an open-source AI support engineer for debugging apps, ranking root causes, and generating patch-ready fixes from logs, stack traces, screenshots, and bug reports.
+AI-powered debugging assistant that transforms logs, stack traces, screenshots, and bug reports into structured incident analysis, ranked root-cause hypotheses, and patch-ready engineering artifacts.
 
-## Why PatchPilot?
+PatchPilot helps developers spend less time investigating failures and more time shipping fixes.
 
-Most debugging tools stop at showing errors.
-
-PatchPilot goes further by turning messy incident evidence into structured engineering outputs:
-
-- concise incident summaries
-- ranked root-cause hypotheses
-- suggested fixes
-- draft commit messages
-- PR-ready summaries
-
-It is designed for developers who want faster triage, clearer diagnostics, and a cleaner path from failure to fix.
+Instead of manually piecing together logs, screenshots, and bug reports, PatchPilot analyzes incident evidence and generates actionable insights that accelerate debugging.
 
 ## Features
 
-- Upload logs, stack traces, screenshots, and bug reports
-- Parse raw evidence into structured signals
-- Generate AI-assisted incident summaries
-- Rank likely root causes with confidence scores
-- Suggest fixes based on available evidence
-- Generate draft commit messages and pull request summaries
-- Save incident history for later review
-- Run locally with Ollama for privacy-friendly workflows
+* 📄 Upload logs, stack traces, screenshots, and bug reports
+* 🔍 Parse raw debugging evidence into structured signals
+* 🤖 Generate AI-assisted incident summaries
+* 📊 Rank likely root causes with confidence scores
+* 🛠 Suggest potential fixes based on available evidence
+* 💬 Generate draft commit messages
+* 🚀 Generate pull request summaries
+* 📚 Store incident history for future reference
+* 🔒 Run entirely locally with Ollama for privacy-first workflows
 
 ## Tech Stack
 
 ### Frontend
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
+* Next.js
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
 
 ### Backend
 
-- FastAPI
-- Python
-- SQLAlchemy / SQLModel
+* FastAPI
+* Python
+* SQLAlchemy / SQLModel
 
-### Data
+### Database
 
-- Postgres
+* PostgreSQL
 
 ### AI
 
-- Ollama
+* Ollama
 
-## Architecture Overview
+## Project Structure
 
-PatchPilot has two main applications:
 
-- `apps/web` — frontend for uploads, results, and history
-- `apps/api` — backend for ingestion, parsing, storage, and AI analysis
+```text
+patchpilot/
+├── apps/
+│   ├── api/          # FastAPI backend
+│   └── web/          # Next.js frontend
+│
+├── packages/
+│   ├── parsers/      # Evidence parsing
+│   ├── prompts/      # Versioned prompt templates
+│   ├── shared/       # Shared types
+│   └── evals/        # Evaluation utilities
+│
+└── docker/
+```
+## Architecture
 
-Supporting packages include:
+PatchPilot consists of two primary applications:
 
-- `packages/shared` — shared contracts and types
-- `packages/prompts` — versioned AI prompt templates
-- `packages/parsers` — evidence extraction logic
-- `packages/evals` — evaluation helpers
+- apps/web
+
+Responsible for:
+
+* Incident creation
+* File uploads
+* Results dashboard
+* Incident history
+* User interface
+
+- apps/api
+
+Responsible for:
+
+* Evidence ingestion
+* Parsing
+* AI orchestration
+* Persistence
+* Incident analysis
+
+Shared packages contain reusable business logic, prompt templates, parsers, and evaluation helpers.
+
 
 ## How It Works
 
-1. Create an incident
-2. Upload logs, stack traces, screenshots, or bug details
-3. Normalize and parse evidence
-4. Extract failure signals
-5. Generate a structured incident summary
-6. Rank root-cause hypotheses
-7. Generate suggested fixes and shipping artifacts
+```
+Create Incident
+        │
+        ▼
+Upload Evidence
+(logs, screenshots, bug reports)
+        │
+        ▼
+Normalize Input
+        │
+        ▼
+Extract Signals
+        │
+        ▼
+Generate Incident Summary
+        │
+        ▼
+Rank Root Causes
+        │
+        ▼
+Generate Suggested Fixes
+        │
+        ▼
+Produce Commit Message + PR Summary
+```
 
-## Quickstart
+## Quick Start
 
-### Prerequisites
+Prerequisites
 
-- Docker
-- Docker Compose
-- Ollama installed locally
+* Docker
+* Docker Compose
+* Ollama
 
-### Setup
-
-```bash
+## Installation
+```text
 git clone https://github.com/yourusername/patchpilot.git
 cd patchpilot
 cp .env.example .env
 docker compose up --build
 ```
 
-# Run Ollama
-ollama serve
-ollama pull 
+Start Ollama:
+- ollama serve
+
+- Download a model:
+```
+ollama pull llama3.1:8b
+
+Open the application:
+
+http://localhost:3000
 ```
 
-Then open the app in your browser.
-
-## Example Outputs
+## Example Output
 
 PatchPilot can generate:
 
-- a readable incident summary
-- likely root causes
-- confidence-ranked hypotheses
-- fix suggestions
-- draft commit messages
-- pull request notes
-	- 	a readable incident summary
-	- 	likely root causes
-	- 	confidence-ranked hypotheses
-	- 	fix suggestions
-	- 	draft commit messages
-	- 	pull request notes
+* Incident summary
+* Ranked root-cause hypotheses
+* Confidence scores
+* Suggested fixes
+* Draft commit messages
+* Pull request summaries
 
-## Project Status
+## Roadmap
 
-PatchPilot is currently in MVP development.
+MVP
 
-### Current MVP Scope
+* Incident creation
+* Evidence upload
+* Log parsing
+* AI analysis
+* Results dashboard
+* Incident history
 
-- incident creation
-- evidence upload
-- log parsing
-- AI analysis
-- results dashboard
-- saved incident history
+## Planned
 
-### Planned
+* GitHub integration
+* Similar incident retrieval
+* Incident replay mode
+* Evaluation dashboard
+* Team workspaces
+* Desktop application (Tauri)
 
-- GitHub integration
-- incident replay mode
-- similar incident retrieval
-- eval dashboard
-- team workspaces
-- desktop app via Tauri
+### Documentation
 
-## Documentation
+* ARCHITECTURE.md
+* ROADMAP.md
+* EVALS.md
 
-- ARCHITECTURE.md
-- ROADMAP.md
-- EVALS.md
+### Contributing
 
-Current MVP Scope
-	- 	incident creation
-	- 	evidence upload
-	- 	log parsing
-	- 	AI analysis
-	- 	results dashboard
-	- 	saved incident history
+Contributions are welcome.
 
-Planned
-	- 	GitHub integration
-	- 	incident replay mode
-	- 	similar incident retrieval
-	- 	eval dashboard
-	- 	team workspaces
-	- 	desktop app via Tauri
+Please open an issue before beginning large changes.
 
-Documentation
-	-	ARCHITECTURE.md
-	- 	ROADMAP.md
-	-	EVALS.md
+Bug reports, feature requests, documentation improvements, and pull requests are all appreciated.
 
-## Contributing
 
-Contributions are welcome. Open an issue, suggest a feature, or submit a PR.
 
-## License
+### License
 
 MIT
